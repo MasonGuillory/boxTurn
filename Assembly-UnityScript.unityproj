@@ -18,7 +18,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_STANDALONE;ENABLE_MICROPHONE;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;ENABLE_AUDIO_FMOD;ENABLE_NETWORK;ENABLE_MONO;ENABLE_PHYSICS;ENABLE_TERRAIN;ENABLE_CACHING;ENABLE_SUBSTANCE;ENABLE_GENERICS;ENABLE_CLOTH;ENABLE_MOVIES;ENABLE_AUDIO;ENABLE_WWW;ENABLE_SHADOWS;ENABLE_DUCK_TYPING;UNITY_4_0_1;UNITY_4_0;UNITY_STANDALONE_WIN;ENABLE_PROFILER;UNITY_EDITOR</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_NETWORK;ENABLE_MONO;ENABLE_PHYSICS;ENABLE_TERRAIN;ENABLE_CACHING;ENABLE_SUBSTANCE;ENABLE_GENERICS;ENABLE_CLOTH;ENABLE_MOVIES;ENABLE_AUDIO;ENABLE_WWW;ENABLE_SHADOWS;ENABLE_DUCK_TYPING;UNITY_4_1_1;UNITY_4_1;ENABLE_PROFILER;UNITY_EDITOR</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -44,18 +44,35 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Script\Bomb.js" />
+     <Compile Include="Assets\BombChute\Script\BombChuteTargetLConstDeploy.js" />
+     <Compile Include="Assets\BombChute\Script\BombChuteTargetRConstDeploy.js" />
+     <Compile Include="Assets\Script\CharacterController_v2.js" />
      <Compile Include="Assets\Script\CharacterMotor.js" />
-     <Compile Include="Assets\Script\DeployBomb.js" />
      <Compile Include="Assets\Script\Elevator.js" />
+     <Compile Include="Assets\Script\PipeRotationController.js" />
+     <Compile Include="Assets\Script\PipeRotator.js" />
      <Compile Include="Assets\Script\Plate.js" />
      <Compile Include="Assets\Script\PlateController.js" />
-     <Compile Include="Assets\Script\Platform.js" />
      <Compile Include="Assets\Script\PlatformInputController.js" />
      <Compile Include="Assets\Script\Player.js" />
      <Compile Include="Assets\Script\Projectile.js" />
      <Compile Include="Assets\Script\PushPlate.js" />
      <Compile Include="Assets\Script\Rotator.js" />
+     <Compile Include="Assets\TestEnvironment\Prefab\BombChute\Script\BombChute.js" />
+     <Compile Include="Assets\TestEnvironment\Prefab\BombChute\Script\BombChuteTargetL.js" />
+     <Compile Include="Assets\TestEnvironment\Prefab\BombChute\Script\BombChuteTargetR.js" />
+     <Compile Include="Assets\TestEnvironment\Prefab\BombChute\Script\BombLeft.js" />
+     <Compile Include="Assets\TestEnvironment\Prefab\BombChute\Script\BombRight.js" />
+     <Compile Include="Assets\TestEnvironment\Prefab\BombChuteTest\Bomb.js" />
+     <Compile Include="Assets\TestEnvironment\Prefab\BombChuteTest\BounceObject.js" />
+     <Compile Include="Assets\TestEnvironment\Prefab\BombChuteTest\DeployBomb.js" />
+     <Compile Include="Assets\TestEnvironment\Prefab\Script\Platform.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{DE8FCF21-BA00-9E5E-00ED-58B3E9ACBCFE}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
+      <Project>{C32098CC-4CB7-DE54-4653-8905554927B9}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
