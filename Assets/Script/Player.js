@@ -16,6 +16,10 @@ var zoomScale:int;
 var curZoom:int=1;
 var constantz:float=0;
 
+var playerTrans: Transform;		//used to get location of player object Felix
+private var p0: Vector3;		//holds initial postion for player Felix
+var direction: Vector3 = Vector3(1,0,0); // direction relative to the player
+
 function Start () {
 
 	lastLocation = transform.position;
@@ -62,7 +66,7 @@ function getInputData() {
 	}
 	
 	//Fire a projectile when SHIFT button is pressed
-	if( Input.GetKeyDown(KeyCode.LeftAlt) || Input.GetKeyDown(KeyCode.RightAlt) ) {
+	if( Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.RightShift) ) {
 	
 		var steam = Instantiate(projectile, transform.position + (transform.forward*0.5), transform.rotation);
 		steam.rigidbody.AddForce(steam.transform.forward * projectileSpeed);
@@ -123,4 +127,19 @@ function playAnimation() {
 			
 	}
 
+}
+
+//on collision with a bomb move player transform Felix
+function OnCollisionEnter(pCollision : Collision){
+	//bomb touches player
+	if(pCollision.gameObject.tag == "Bomb"){
+		print("player hit by bomb");
+		p0 = this.transform.position;		//get starting position for player
+		// convert direction to local space
+    	var dir = this.transform.TransformDirection(direction);
+    	for(var i=0; i<5; i++){
+    		this.transform.position = p0 + .2 * dir;
+    	}
+    	
+	}
 }
